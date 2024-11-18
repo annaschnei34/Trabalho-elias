@@ -74,22 +74,348 @@ nav {
     transition: 0.5s;
 
 }
-
-.Menu a:hover {
-    color: var(--cor-segundaria);
-}
-<div class="contact-section">
-  <h2>Fale Conosco</h2>
-  <form class="contact-form">
-    <label for="name">Nome:</label>
-    <input type="text" id="name" name="name" placeholder="Seu nome" required>
-    
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-    
-    <label for="message">Mensagem:</label>
-    <textarea id="message" name="message" placeholder="Sua mensagem..." required></textarea>
-    
-    <button type="submit">Enviar</button>
-  </form>
-</div>
+/* Resetando estilos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Definindo cores principais */
+  :root {
+    --primary-color: #3498db; /* Azul principal */
+    --secondary-color: #2c3e50; /* Cor secundária (Cinza escuro) */
+    --accent-color: #e74c3c; /* Cor de destaque (Vermelho) */
+    --background-color: #f4f4f9; /* Cor de fundo */
+    --text-color: #333; /* Cor do texto */
+    --header-bg-color: #2c3e50; /* Fundo do cabeçalho */
+    --footer-bg-color: #34495e; /* Fundo do rodapé */
+  }
+  
+  /* Corpo do site */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: var(--header-bg-color);
+    padding: 20px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  header nav {
+    float: right;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Estilos do conteúdo */
+  section {
+    padding: 80px 0; /* Adiciona espaçamento para o cabeçalho fixo */
+  }
+  
+  section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Seção Sobre */
+  #sobre {
+    background-color: #fff;
+  }
+  
+  #sobre img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  #sobre .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  #sobre .content {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  /* Seção de Serviços */
+  #servicos {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  #servicos .service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  #servicos .card {
+    background-color: white;
+    color: var(--text-color);
+    width: calc(33% - 20px);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  #servicos .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  #servicos .card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #servicos .card p {
+    font-size: 16px;
+  }
+  
+  /* Seção Blog */
+  #blog {
+    background-color: #fff;
+  }
+  
+  #blog .post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  #blog .post .card {
+    width: calc(50% - 20px);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #blog .post .card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  #blog .post .card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+  }
+  
+  #blog .post .card p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* FAQ */
+  #faq {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  #faq .faq-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #faq .faq-item h4 {
+    font-size: 20px;
+  }
+  
+  #faq .faq-item p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* Seção Portfólio */
+  #portfolio {
+    background-color: #fff;
+  }
+  
+  #portfolio .portfolio-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  #portfolio .portfolio-card {
+    width: calc(33% - 20px);
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #portfolio .portfolio-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  #portfolio .portfolio-card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  
+  #portfolio .portfolio-card p {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  /* Formulário de Contato */
+  #contato {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  #contato .form-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #contato form {
+    width: 50%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #contato input, #contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  #contato button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #contato button:hover {
+    background-color: var(--primary-color);
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: var(--footer-bg-color);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+  }
+  
+  footer a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
+    header nav {
+      text-align: center;
+    }
+  
+    header nav ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  
+    header nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    #servicos .service-cards {
+      flex-direction: column;
+    }
+  
+    #servicos .card {
+      width: 100%;
+    }
+  
+    #blog .post .card {
+      width: 100%;
+    }
+  
+    #portfolio .portfolio-cards {
+      flex-direction: column;
+    }
+  
+    #portfolio .portfolio-card {
+      width: 100%;
+    }
+  
+    #contato form {
+      width: 80%;
+    }
+  }
+  
